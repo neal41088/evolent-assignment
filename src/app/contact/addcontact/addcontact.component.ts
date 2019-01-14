@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ContactService } from '../services/contact.service';
 
+import { Contact } from '../../models/contact.model';
+
 @Component({
   selector: 'app-addcontact',
   templateUrl: './addcontact.component.html',
@@ -12,7 +14,7 @@ import { ContactService } from '../services/contact.service';
 export class AddcontactComponent implements OnInit, AfterViewInit {
 
   id: number;
-  contacts: any;
+  contacts: Contact[] = [];
   updateContact: boolean = false;
 
   contactForm = new FormGroup({

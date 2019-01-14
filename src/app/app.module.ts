@@ -4,10 +4,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule }  from './app-routing.module';
+import { HeaderComponent } from './header.component';
+import { FooterComponent } from './footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -18,3 +22,4 @@ import { AppRoutingModule }  from './app-routing.module';
   bootstrap: [AppComponent]
 })  
 export class AppModule { } 
+ 

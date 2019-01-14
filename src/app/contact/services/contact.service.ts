@@ -21,7 +21,7 @@ export class ContactService {
 
       let myParams = new URLSearchParams();
       if( 0 < id ) {
-          myParams.append('id':number, id);
+          myParams.append( 'id', id.toString() );
       }
 
       let options = new RequestOptions({ headers: myHeaders, params: myParams });

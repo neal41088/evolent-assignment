@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { ContactService } from './services/contact.service';
 
+import { Contact } from '../models/contact.model';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -10,7 +12,7 @@ import { ContactService } from './services/contact.service';
 })
 export class ContactComponent implements OnInit {
 
-  contacts = [];
+  contacts: Contact[] = [];
 
   constructor( private _contact: ContactService, private _router: Router, private route: ActivatedRoute ) {
   }
@@ -29,10 +31,9 @@ export class ContactComponent implements OnInit {
   }
 
   deleteContact(id) {
-      console.log( "Delete contact : " + id );
-      console.log( "Add record..." );
-          this._contact.deleteContact( id )
-                        .subscribe( resResponse => {console.log( resResponse ); } );
+
+      this._contact.deleteContact( id )
+                    .subscribe( resResponse => {console.log( resResponse ); } );
 
       setTimeout( () => {
         this._router.navigate( ['/contacts'] );
